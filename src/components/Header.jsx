@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Header() {
-  return <h2>Expense Tracker </h2>
+  return <h2 className='text-right'>Expense Tracker </h2>;
 }
 
-export default Header
+export default Header;

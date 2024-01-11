@@ -7,29 +7,39 @@ module.exports = {
   plugins: [require("daisyui")],
 
   daisyui: {
-    themes: ["light", "dark", "cupcake"],
-    // themes: [
-    //   {
-    //     mytheme: {
-    //       primary: "#ffffff",
-
-    //       secondary: "#ffffff",
-
-    //       accent: "#ffffff",
-
-    //       neutral: "#ffffff",
-
-    //       "base-100": "#ffffff",
-
-    //       info: "#ff00ff",
-
-    //       success: "#ffffff",
-
-    //       warning: "#ff0000",
-
-    //       error: "#ffffff",
-    //     },
-    //   },
-    // ],
+    themes: [
+      "light",
+      "dark",
+      "cupcake",
+      "bumblebee",
+      "emerald",
+      "corporate",
+      "synthwave",
+      "retro",
+      "cyberpunk",
+      "valentine",
+      "halloween",
+      "garden",
+      "forest",
+      "aqua",
+      "lofi",
+      "pastel",
+      "fantasy",
+      "wireframe",
+      "black",
+      "luxury",
+      "dracula",
+      "cmyk",
+      "autumn",
+      "business",
+      "acid",
+      "lemonade",
+      "night",
+      "coffee",
+      "winter",
+      "dim",
+      "nord",
+      "sunset",
+    ],
   },
 };

@@ -11,9 +11,10 @@ function Balance() {
 
   return (
     <>
-      <h4>Your Balance</h4>
+      <h4 className='mt-6'>Your Balance</h4>
       <h1 className='text-6xl' id='balance'>
-        ${total}
+        {total < 0 ? "-$" : "$"}
+        {total < 0 ? `${Math.abs(total).toFixed(2)}` : total}
       </h1>
     </>
   );

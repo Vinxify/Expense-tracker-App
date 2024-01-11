@@ -8,9 +8,13 @@ function TransanctionList() {
   return (
     <>
       <h3></h3>
-      <ul>
+      <ul className='card bg-gray-700 p-2'>
         {transanctions.map((transanction) => (
-          <Transanction key={transanction.id} transanction={transanction} />
+          <Transanction
+            className='card-body bg-gray-700'
+            key={transanction.id}
+            transanction={transanction}
+          />
         ))}
       </ul>
     </>
