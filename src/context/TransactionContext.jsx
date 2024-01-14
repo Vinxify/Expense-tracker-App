@@ -5,14 +5,7 @@ import AppReducer from "./AppReducer";
 // initial state
 
 const initialState = {
-  transanctions: [
-    { id: 1, text: "Salary", amount: 300 },
-    { id: 2, text: "Flower", amount: -50 },
-    { id: 3, text: "Gamble", amount: 300 },
-    { id: 4, text: "Food", amount: -200 },
-    { id: 5, text: "Knack", amount: -100 },
-    { id: 6, text: "Snack", amount: -50 },
-  ],
+  transanctions: [{ id: 1, text: "Salary", amount: 300 }],
 };
 
 // Create context

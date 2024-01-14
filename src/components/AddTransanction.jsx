@@ -1,25 +1,34 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import TransactionContext from "../context/TransactionContext";
 
 function AddTransanction() {
   const { addTransanction } = useContext(TransactionContext);
 
   const [text, setText] = useState("");
+  const [message, setMessage] = useState(false);
   const [amount, setAmount] = useState(0);
   const [btnDisabled, setBtnDisabled] = useState(true);
 
+  // Handling amount
   const handleChangeAmount = (e) => {
-    setAmount(+e.currentTarget.value);
+    if (e.target.value.length > 4) {
+      setMessage(true);
+      setBtnDisabled(true);
+    } else {
+      setAmount(+e.currentTarget.value);
+      setMessage(false);
+      handleChangeText;
+    }
   };
 
   const handleChangeText = (e) => {
     if (!text) {
       setBtnDisabled(true);
-    } else if (text.length < 3) {
+    } else if (text.length < 2) {
       setBtnDisabled(true);
     } else setBtnDisabled(false);
-
-    setText(e.target.value);
+    // using trim to remove whitespace
+    setText(e.target.value.trim());
   };
 
   const handleSumbit = (e) => {
@@ -41,21 +50,24 @@ function AddTransanction() {
     <div className='card mt-6'>
       <h3 className='text-3xl text-primary'>Add new Transanction</h3>
       <form className='form-control' onSubmit={handleSumbit}>
-        <label className='label '>Text</label>
+        <label className='label'>Narration</label>
         <input
-          className='file-input bg-gray-600 px-2'
+          className='file-input bg-gray-600 px-2 text-clip'
           type='text'
           value={text}
           onChange={handleChangeText}
           placeholder='Enter text...'
         />
-        <label className='label'>Amount</label>
+        <label className='label truncate'>Amount</label>
         <input
-          className='file-input bg-gray-600 px-2'
+          className='file-input bg-gray-600 px-2 truncate'
           type='number'
           value={amount}
           onChange={handleChangeAmount}
         />
+        {message && (
+          <p className='text-red-500'>Amount should not be more than $9999</p>
+        )}
 
         <button
           className=' btn btn-primary mt-3'

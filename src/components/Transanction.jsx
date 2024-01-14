@@ -1,6 +1,6 @@
-import React from "react";
 import { FaTimes } from "react-icons/fa";
 import TransactionContext from "../context/TransactionContext";
+import TransanctionText from "./TransanctionText";
 import { useContext } from "react";
 
 function Transanction({ transanction }) {
@@ -8,9 +8,9 @@ function Transanction({ transanction }) {
   const sign = transanction.amount < 0 ? "-" : "+";
 
   return (
-    <li className=' flex bg-gray-600 rounded-lg justify-between px-4 py-4 align-center my-2 relative'>
-      {transanction.text}
-      <span>
+    <li className=' grid grid-cols-2 gap-2 bg-gray-600 rounded-lg justify-between px-4 py-4 align-center my-2 relative truncate'>
+      <TransanctionText transanction={transanction} />
+      <span className='flex justify-self-end pr-2 text-ellipsis'>
         {sign}${Math.abs(transanction.amount)}
       </span>
       <button
