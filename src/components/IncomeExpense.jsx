@@ -17,8 +17,6 @@ function IncomeExpense() {
       .reduce((acc, cur) => acc + cur.amount, 0) * -1
   ).toFixed(2);
 
-  console.log(income, expense);
-
   return (
     <div className='bg-gray-100 card flex-row  justify-around mt-6 mb-3'>
       <div>
