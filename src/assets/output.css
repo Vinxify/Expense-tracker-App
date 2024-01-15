@@ -2480,10 +2480,6 @@ html {
   justify-content: space-around;
 }
 
-.justify-items-end {
-  justify-items: end;
-}
-
 .gap-2 {
   gap: 0.5rem;
 }
@@ -2492,18 +2488,10 @@ html {
   justify-self: end;
 }
 
-.overflow-hidden {
-  overflow: hidden;
-}
-
 .truncate {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-.overflow-ellipsis {
-  text-overflow: ellipsis;
 }
 
 .text-ellipsis {

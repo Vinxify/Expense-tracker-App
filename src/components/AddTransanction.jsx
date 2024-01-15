@@ -13,11 +13,10 @@ function AddTransanction() {
   const handleChangeAmount = (e) => {
     if (e.target.value.length > 4) {
       setMessage(true);
-      setBtnDisabled(true);
+      // setBtnDisabled(true);
     } else {
-      setAmount(+e.currentTarget.value);
+      setAmount(+e.target.value);
       setMessage(false);
-      handleChangeText;
     }
   };
 
@@ -44,6 +43,7 @@ function AddTransanction() {
     setBtnDisabled(true);
     setText("");
     setAmount(0);
+    setMessage(false);
   };
 
   return (
@@ -69,13 +69,15 @@ function AddTransanction() {
           <p className='text-red-500'>Amount should not be more than $9999</p>
         )}
 
-        <button
-          className=' btn btn-primary mt-3'
-          disabled={btnDisabled}
-          type='submit'
-        >
-          Add transanction
-        </button>
+        {text && (
+          <button
+            className=' btn btn-primary mt-3'
+            disabled={btnDisabled}
+            type='submit'
+          >
+            Add transanction
+          </button>
+        )}
       </form>
     </div>
   );
